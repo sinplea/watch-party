@@ -8,7 +8,10 @@ export default {
 }
 
 export const messageData: Message = {
-    sender: 'Alex',
+    sender: {
+        name: 'Alex',
+        color: '#03fcf8',
+    },
     body: 'Hi!',
     created_at: new Date(),
 }
