@@ -4,24 +4,31 @@
 
     const dispatch = createEventDispatcher();
 
-    export let sender: Sender;
-
-    let message: Message = {
-        sender,
-        body: '',
-        created_at: new Date(),
+    export let sender: Sender = {
+        name: 'DefaultValue',
+        color: '#f1f1f1',
     };
 
-    function handleKeypress(e) {
-        const key: number = e.keyCode;
+    let messageValue: string;
+    
+    function onKeydown(e: KeyboardEvent) {
+        const key: string = e.code;
+        const message: Message = {
+            sender,
+            body: messageValue,
+            created_at: new Date(),
+        };
 
-        // Enter key pressed
-        if (key === 13) {
+        if (key === 'Enter') {
             e.preventDefault();
             
-            dispatch('message', {
+            // Custom Event to pass along message
+            dispatch('onMessageSent', {
                 message,
             });
+
+            // Reset text area
+            messageValue = ''
         };
     };
 </script>
@@ -29,8 +36,9 @@
 <textarea 
     name="chat-input" 
     id="chat-input" 
-    bind:value={message.body}
-    on:keypress={handleKeypress}
+    placeholder="Send a message"
+    bind:value={messageValue}
+    on:keydown={onKeydown}
     cols="30" 
     rows="10"></textarea>
 

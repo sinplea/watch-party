@@ -48,4 +48,7 @@ export const WithMessages = () => ({
 
 export const Empty = () => ({
     Component: ChatMessageList,
+    props: {
+        messages: [],
+    },
 })

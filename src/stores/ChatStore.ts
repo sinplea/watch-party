@@ -12,8 +12,8 @@ import type { Sender } from '../stories/Chat/Interfaces';
 // Default Values
 
 let defaultSender: Sender = {
-    name: 'DefaultValue',
-    color: '#ffffff',
+    name: 'Default',
+    color: '#2dcc5d',
 };
 
 // Custom Stores

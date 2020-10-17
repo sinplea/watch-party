@@ -19,6 +19,15 @@ export const messageData: Message = {
 export const Primary = () => ({
     Component: ChatMessage,
     props: {
-        message: messageData
+        message: messageData,
+        index: 0,
+    }
+})
+
+export const Accented = () => ({
+    Component: ChatMessage,
+    props: {
+        message: messageData,
+        index: 1,
     }
 })
