@@ -26,11 +26,22 @@
 </div>
 
 <style>
+    .chat-message {
+        font-family: 'Mukta', sans-serif;
+        padding: 0.5%
+    }
+    
+    .created-at {
+        font-size: 11px;
+        color: #919191;
+    }
+
     .sender {
         color: var(--name-color);
+        font-weight: bold;
     }
 
     .accented {
-        background-color: beige;
+        background-color: #f5f5f5;
     }
 </style>
