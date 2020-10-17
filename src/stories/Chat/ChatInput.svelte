@@ -38,12 +38,22 @@
     id="chat-input" 
     placeholder="Send a message"
     bind:value={messageValue}
-    on:keydown={onKeydown}
-    cols="30" 
-    rows="10"></textarea>
+    on:keydown={onKeydown}></textarea>
+
 
 <style>
     textarea {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         resize: none;
+        width: 80%;
+        padding: 1%;
+        height: 20px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        font-family: 'Mukta', sans-serif;
+        font-weight: lighter;
     }
 </style>
