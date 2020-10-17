@@ -1,3 +1,7 @@
+<svelte:head>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+</svelte:head>
+
 <script lang="ts">
     import ChatMessageList from './ChatMessageList.svelte';
     import ChatInput from './ChatInput.svelte';
