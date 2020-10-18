@@ -43,12 +43,9 @@
 
 <style>
     textarea {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
         resize: none;
-        width: 80%;
         padding: 1%;
+        width: 100%;
         height: 20px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;

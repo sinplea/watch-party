@@ -17,7 +17,16 @@
 </script>
 
 <div class="chat-panel">
-    <div class="top-bar">Chat Room</div>
+    <h2 class="top-bar">CHAT ROOM</h2>
     <ChatMessageList messages={messages}></ChatMessageList>
     <ChatInput sender={$sender} on:onMessageSent={postMessage}></ChatInput>
 </div>
+
+<style>
+    .top-bar {
+        font-family: 'Mukta', sans-serif;
+        font-size: 22px;
+        text-align: center;
+        padding: 2vh 0;
+    }
+</style>
