@@ -43,14 +43,15 @@
 
 <style>
     textarea {
-        resize: none;
-        padding: 1%;
+        height: 40px;
         width: 100%;
-        height: 20px;
+        resize: none;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
         font-family: 'Mukta', sans-serif;
         font-weight: lighter;
+        padding-top: 10px;
+        box-sizing: border-box;
     }
 </style>
