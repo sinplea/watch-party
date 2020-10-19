@@ -3,10 +3,16 @@
     import type { Message } from './Interfaces';
 
     export let messages: Message[];
+
+    let containerDiv: Element;
+
     $: noMessages = messages.length === 0;
+
 </script>
 
-<div class="message-list-wrapper {noMessages ? '' : 'is-populated'}">
+<div 
+    bind:this={containerDiv}
+    class="message-list-wrapper {noMessages ? 'no-messages' : 'is-populated'}">
     {#if noMessages}
         <div class="no-message-wrapper">
             <div class="no-message-icon">
@@ -35,9 +41,10 @@
         grid-row-end: 3;
         align-self: center;
         max-height: 100%;
-        overflow-x: hidden; 
+        line-height: 22px;
+        overflow: auto;
     }
-
+    
     /*
     TODO: Use Javascript to dynamically fade the Scroll bar in and out
     on mouseenter and mouseleave
@@ -49,7 +56,6 @@
     
     .is-populated {
         align-self: start;
-        overflow-y: scroll;
     }
 
     .no-message-icon, .no-message-title, .no-message-subtitle {
