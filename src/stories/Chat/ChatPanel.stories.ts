@@ -1,5 +1,5 @@
 import ChatPanel from './ChatPanel.svelte';
-import { mockMessages } from './ChatMessageList.stories';
+import { mockData as mockMessages } from './ChatMessageList.stories';
 
 export default {
     title: 'Panels/Chat',

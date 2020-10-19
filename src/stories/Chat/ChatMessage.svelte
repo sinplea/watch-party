@@ -11,9 +11,6 @@
         created_at: new Date(),
     };
 
-
-    console.log(message);
-
     function beautifyDate(time: Date): string {
         return time.toLocaleTimeString(navigator.language, { hour: '2-digit', minute: '2-digit' });
     }

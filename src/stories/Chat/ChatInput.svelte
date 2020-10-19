@@ -9,7 +9,7 @@
         color: '#f1f1f1',
     };
 
-    let messageValue: string;
+    let messageValue: string = "";
     
     function onKeydown(e: KeyboardEvent) {
         const key: string = e.code;
@@ -22,13 +22,15 @@
         if (key === 'Enter') {
             e.preventDefault();
             
-            // Custom Event to pass along message
-            dispatch('onMessageSent', {
-                message,
-            });
+            if (messageValue !== '') {
+                // Custom Event to pass along message
+                dispatch('onMessageSent', {
+                    message,
+                });
 
-            // Reset text area
-            messageValue = ''
+                // Reset text area
+                messageValue = ''
+            }
         };
     };
 </script>
