@@ -28,12 +28,16 @@
 <style>
     .chat-message {
         font-family: 'Mukta', sans-serif;
-        padding: 0.5%
+        padding: 1% 2%;
     }
     
     .created-at {
-        font-size: 11px;
+        font-size: 8px;
         color: #919191;
+    }
+
+    .sender, .message-body {
+        font-size: 14px;
     }
 
     .sender {
