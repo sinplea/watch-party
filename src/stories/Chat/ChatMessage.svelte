@@ -28,7 +28,9 @@
 <style>
     .chat-message {
         font-family: 'Mukta', sans-serif;
-        padding: 1% 2%;
+        padding: 0 2%;
+        max-width: 100%;
+        word-wrap: break-word;
     }
     
     .created-at {
@@ -43,6 +45,10 @@
     .sender {
         color: var(--name-color);
         font-weight: bold;
+    }
+
+    .message-body {
+        font-weight: normal;
     }
 
     .accented {

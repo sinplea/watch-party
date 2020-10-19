@@ -31,7 +31,7 @@
         min-height: 90vh;
         max-height: 90vh;
         grid-template-columns: minmax(0, 90vh);
-        grid-template-rows: 6% auto 12%;
+        grid-template-rows: 6% auto 8%;
         border-left: 2px solid #eee;
     }
 
