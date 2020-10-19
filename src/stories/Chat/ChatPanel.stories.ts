@@ -1,10 +1,31 @@
 import ChatPanel from './ChatPanel.svelte';
+import { mockMessages } from './ChatMessageList.stories';
 
 export default {
-    title: 'Chat/Panel',
+    title: 'Panels/Chat',
     component: ChatPanel,
 };
 
 export const Empty = () => ({
     Component: ChatPanel,
 });
+
+export const PartiallyFilled = () => ({
+    Component: ChatPanel,
+    props: {
+        messages: mockMessages,
+    },
+});
+
+export const Overflowing = () => ({
+    Component: ChatPanel,
+    props: {
+        messages: [...mockMessages, 
+            ...mockMessages, 
+            ...mockMessages, 
+            ...mockMessages,
+            ...mockMessages,
+            ...mockMessages,
+            ...mockMessages],
+    }
+})

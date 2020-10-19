@@ -4,6 +4,7 @@ import type { Message, Sender } from './Interfaces';
 export default {
     title: 'Chat/MessageList',
     component: ChatMessageList,
+    excludeStories: /.*mock$/,
 };
 
 const mockSenders: Sender[] = [
@@ -21,7 +22,7 @@ const mockSenders: Sender[] = [
     }
 ]
 
-const mockMessages: Message[] = [
+export const mockMessages: Message[] = [
     {
         sender: mockSenders[0],
         body: 'Wow!',
