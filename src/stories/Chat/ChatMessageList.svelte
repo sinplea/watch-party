@@ -1,17 +1,29 @@
 <script lang="ts">
+import { afterUpdate, beforeUpdate } from 'svelte';
+
     import ChatMessage from './ChatMessage.svelte';
     import type { Message } from './Interfaces';
 
     export let messages: Message[];
 
-    let containerDiv: Element;
+    let scrollableDiv: HTMLElement;
+    let autoscroll: boolean;
 
     $: noMessages = messages.length === 0;
 
+    beforeUpdate(() => {
+        // Determine if we need to scroll
+        autoscroll = scrollableDiv && (scrollableDiv.offsetHeight + scrollableDiv.scrollTop) > (scrollableDiv.scrollHeight - 20);
+    })
+
+    afterUpdate(() => {
+        // The DOM is in sync with our data
+        if (autoscroll) scrollableDiv.scrollTo(0, scrollableDiv.scrollHeight);
+    })
 </script>
 
 <div 
-    bind:this={containerDiv}
+    bind:this={scrollableDiv}
     class="message-list-wrapper {noMessages ? 'no-messages' : 'is-populated'}">
     {#if noMessages}
         <div class="no-message-wrapper">

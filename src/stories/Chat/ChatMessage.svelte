@@ -46,6 +46,6 @@
     }
 
     .accented {
-        background-color: #f5f5f5;
+        background-color: #f2f2f2;
     }
 </style>

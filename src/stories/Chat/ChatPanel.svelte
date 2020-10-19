@@ -18,7 +18,7 @@
 
 <div class="chat-panel">
         <h2 class="top-bar">CHAT ROOM</h2>
-
+        <div class="seperator"></div>
         <ChatMessageList messages={messages}></ChatMessageList>
 
         <ChatInput sender={$sender} on:onMessageSent={postMessage}></ChatInput>
@@ -31,19 +31,27 @@
         min-height: 90vh;
         max-height: 90vh;
         grid-template-columns: minmax(0, 90vh);
-        grid-template-rows: 13% auto 13%;
-        background-color: #fafafa;
-        border-left: #eee 1px solid
+        grid-template-rows: 6% auto 12%;
+        border-left: 2px solid #eee;
     }
 
     .top-bar {
         font-family: 'Mukta', sans-serif;
         font-size: 18px;
         text-align: center;
+        align-self: center;
         grid-column-start: 1;
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
-        border-bottom: #eeeeee 1px solid;
+    }
+
+    .seperator {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-self: end;
+        border-bottom: 2px solid #eee;
     }
 </style>

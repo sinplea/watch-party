@@ -54,7 +54,7 @@
         padding: 0 4%;
         padding-top: 4%;
         margin-bottom: 2%;
-        border-top: #eee 1px solid;
+        border-top: #eee 2px solid;
     }
 
     textarea {
