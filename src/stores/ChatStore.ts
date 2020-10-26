@@ -7,7 +7,7 @@
  * Global Sender (see src/stories/chat/Interfaces)
  */
 import { writable } from 'svelte/store';
-import type { Sender } from '../stories/Chat/Interfaces';
+import type { Sender } from '../lib/ChatInterfaces';
 
 // Default Values
 
