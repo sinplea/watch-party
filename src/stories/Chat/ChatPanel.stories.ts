@@ -1,4 +1,4 @@
-import ChatPanel from './ChatPanel.svelte';
+import ChatPanel from '../../components/Chat/ChatPanel.svelte';
 import { mockData as mockMessages } from './ChatMessageList.stories';
 
 export default {
@@ -26,6 +26,8 @@ export const Overflowing = () => ({
             ...mockMessages,
             ...mockMessages,
             ...mockMessages,
-            ...mockMessages],
+            ...mockMessages,
+            ...mockMessages,
+            ...mockMessages]
     }
 })

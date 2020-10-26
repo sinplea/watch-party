@@ -1,6 +1,6 @@
-import ChatInput from './ChatInput.svelte';
+import ChatInput from '../../components/Chat/ChatInput.svelte';
 import { action } from '@storybook/addon-actions';
-import type { Sender } from './Interfaces';
+import type { Sender } from '../../lib/ChatInterfaces';
 
 export default {
     title: 'Chat/Input',

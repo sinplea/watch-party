@@ -1,5 +1,5 @@
-import ChatMessage from './ChatMessage.svelte';
-import type { Message } from './Interfaces';
+import ChatMessage from '../../components/Chat/ChatMessage.svelte';
+import type { Message } from '../../lib/ChatInterfaces';
 
 export default {
     title: 'Chat/Message',

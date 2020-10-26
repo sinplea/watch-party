@@ -1,5 +1,5 @@
-import ChatMessageList from './ChatMessageList.svelte';
-import type { Message, Sender } from './Interfaces';
+import ChatMessageList from '../../components/Chat/ChatMessageList.svelte';
+import type { Message, Sender } from '../../lib/ChatInterfaces';
 
 export default {
     title: 'Chat/MessageList',
