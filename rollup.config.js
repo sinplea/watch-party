@@ -5,6 +5,10 @@ import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
+import replace from '@rollup/plugin-replace';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -63,6 +67,9 @@ export default {
 			sourceMap: !production,
 			inlineSources: !production
 		}),
+		replace({
+            API_KEY: JSON.stringify(process.env.API_KEY)
+        }),
 
 		// In dev mode, call `npm run start` once
 		// the bundle has been generated
