@@ -1,16 +1,18 @@
 <script lang="ts">
-    import type { VideoResult } from '../../lib/VideoInterfaces';
+    import type { YouTubeSearchResponseItem } from '../../lib/YouTubeInterfaces';
 
-    export let previewResult: VideoResult;
+    export let videoInfo: YouTubeSearchResponseItem;
     export let index: number;
     $: accented = index % 2 === 0
 </script>
 
 <div class="preview-result-wrapper {accented ? 'accented' : ''}">
-    <img src={previewResult.thumbnail.toString()} alt="Thumbnail for video {previewResult.title}">
-    <div class="result-title">{previewResult.title}</div>
-    <div class="result-description">{previewResult.description}</div>
-    <div class="result-attributes">{previewResult.views} views • {previewResult.publishedAt}</div>
+    <img 
+        src={videoInfo.snippet.thumbnails.high.url} 
+        alt="Thumbnail for video {videoInfo.snippet.title}">
+    <div class="result-title">{videoInfo.snippet.title}</div>
+    <div class="result-description">{videoInfo.snippet.description}</div>
+    <!-- <div class="result-attributes">{videoInfo.snippet.views} views • {previewResult.publishedAt}</div> -->
 </div>
 
 <style>
