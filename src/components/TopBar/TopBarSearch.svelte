@@ -72,6 +72,14 @@
 </div>
 
 <style>
+    .top-bar-search-wrapper {
+        width: 680px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        align-self: center;
+        padding-left: 20px;
+    }
+
     textarea {
         width: 100%;
         height: 40px;
@@ -80,5 +88,8 @@
         border-radius: 5px;
         font-family: 'Mukta', sans-serif;
         font-weight: lighter;
+        padding-top: 10px;
+        box-sizing: border-box;
+        resize: none;
     }
 </style>
