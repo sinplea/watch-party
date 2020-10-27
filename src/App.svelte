@@ -15,7 +15,7 @@
      */
     function handleGoogleAPI() {
         // @ts-ignore
-        gapi.load("client:auth2", function() {
+        gapi.load("client", function() {
             loadClient();
         });
     }

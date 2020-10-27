@@ -1,60 +1,61 @@
 <script lang="ts">
     import TopBarSearchPreview from './TopBarSearchPreview.svelte';
-    import type { VideoResult } from '../../lib/VideoInterfaces';
     import type { YouTubeSearchResponse, YouTubeSearchResponseItem } from '../../lib/YouTubeInterfaces';
 
     let searchValue: string = "";
     let isPreviewActive: boolean = false;
     let searchResults: Array<YouTubeSearchResponseItem> = [];
-    let isOffCooldown: boolean = false;
     let keyboardTimeout: number = -1;
+    let isLoadingPreview: boolean = false;
 
-    const KEYDOWN_MS_WAIT_PERIOD: number = 2000
-
-    function onKeydown(e: KeyboardEvent) {
-        if (searchValue.length > 2) {
-            handleTimer();
-            isPreviewActive = true;
-        } else {
-            isPreviewActive = false
-        }
+    $: {
+        tryAndCreatePreview(searchValue);
     }
 
-    function requestYoutubeSearchResults() {
+    const KEYDOWN_MS_WAIT_PERIOD: number = 1000
+
+    function tryAndCreatePreview(search: string) {
+        isPreviewActive = search !== '';
+
+        if (search.length > 2) {
+            isLoadingPreview = true;
+            tryToRequest(search);
+        } else {
+            isLoadingPreview = false;
+        };
+    };
+
+    function requestYoutubeSearchResults(search: string) {
         const request = {
             "part": ["snippet"],
             "maxResults": 10,
-            "order": "relevance",
+            "q": search,
         }
 
         // @ts-ignore
         gapi.client.youtube.search.list(request)
             .then(function(res) {
-                const results: YouTubeSearchResponse = JSON.parse(res); 
+                const results: YouTubeSearchResponse = res.result; 
+                console.log(results);
                 searchResults = results.items;
+                isLoadingPreview = false;
             },
-            function(err) { console.error("Execute error", err); });
+            function(err) { 
+                console.error("Execute error", err); 
+            });
     }
 
     /**
-     * handleTimer()
+     * tryToRequest()
      * Starts a timer if keyboardTimout has not yet been set by setTimeout()
      * If called again before f(x) has run, f(x) will be canceled.
     */
-    function handleTimer(): void {
-        // NOTE: I think this works to throttle requests to the YouTube API, so that
-        // we don't spam request every time we type
+    function tryToRequest(search: string): void {
+        clearTimeout(keyboardTimeout);
 
-        // If keyboardTimeout is set to anything besides -1, 
-        // that means we have a function that is going to fire which we want to cancel.
-        if (keyboardTimeout !== -1) {
-            clearTimeout(keyboardTimeout);
-            keyboardTimeout = -1;
-        } else {
-            keyboardTimeout = setTimeout(() => {
-                requestYoutubeSearchResults();
-            }, KEYDOWN_MS_WAIT_PERIOD)
-        }
+        keyboardTimeout = setTimeout(() => {
+            requestYoutubeSearchResults(search);
+        }, KEYDOWN_MS_WAIT_PERIOD)
     }
 </script>
 
@@ -63,11 +64,10 @@
         name="top-bar-search" 
         id="top-bar-search" 
         placeholder="Search for a youtube video"
-        bind:value={searchValue}
-        on:keydown={onKeydown}></textarea>
+        bind:value={searchValue}></textarea>
     
     {#if isPreviewActive}
-        <TopBarSearchPreview elements={searchResults}></TopBarSearchPreview>
+        <TopBarSearchPreview loading={isLoadingPreview} elements={searchResults}></TopBarSearchPreview>
     {/if}
 </div>
 
@@ -78,6 +78,7 @@
         grid-column-end: 3;
         align-self: center;
         padding-left: 20px;
+        height: 40px;
     }
 
     textarea {
