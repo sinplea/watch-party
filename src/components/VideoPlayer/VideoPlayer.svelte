@@ -48,3 +48,12 @@
          <div id="player"></div>
     {/if}
 </div>
+
+<style>
+    .video-player-wrapper {
+        grid-column: 1 / 2;
+        margin: 0;
+        width: 100%;
+        grid-row: 2 / 3;
+    }
+</style>

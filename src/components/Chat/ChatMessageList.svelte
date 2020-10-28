@@ -53,7 +53,7 @@ import { afterUpdate, beforeUpdate } from 'svelte';
         grid-row-end: 3;
         align-self: center;
         max-height: 100%;
-        line-height: 22px;
+        line-height: 1.375em;
         overflow: auto;
     }
     
@@ -76,12 +76,12 @@ import { afterUpdate, beforeUpdate } from 'svelte';
     }
 
     .no-message-title {
-        font-size: 16px;
+        font-size: 1em;
         font-weight: bold;
     }
 
     .no-message-subtitle {
-        font-size: 14px;
+        font-size: 0.875em;
         font-style: italic;
     }
 </style>

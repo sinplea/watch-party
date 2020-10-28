@@ -14,9 +14,10 @@
         display: grid;
         grid-template-columns: 10% 70% 20%;
         width: 100%;
-        min-height: 6vh;
-        max-height: 6vh;
+        height: 100%;
         background-color: #EB3636;
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
     }
 
     .logo {

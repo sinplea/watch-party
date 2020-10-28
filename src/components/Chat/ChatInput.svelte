@@ -56,12 +56,11 @@
         align-self: end;
         padding: 0 4%;
         padding-top: 4%;
-        margin-bottom: 2%;
-        border-top: #eee 2px solid;
+        /*margin-bottom: 2%;*/
     }
 
     textarea {
-        height: 40px;
+        height: 2.5em;
         width: 100%;
         resize: none;
         -webkit-border-radius: 5px;
@@ -69,7 +68,7 @@
         border-radius: 5px;
         font-family: 'Mukta', sans-serif;
         font-weight: lighter;
-        padding-top: 10px;
+        padding-top: 0.625em;
         box-sizing: border-box;
     }
 </style>

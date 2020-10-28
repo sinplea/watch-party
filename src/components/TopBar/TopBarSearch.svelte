@@ -78,7 +78,7 @@
         grid-column-end: 3;
         align-self: center;
         padding-left: 1.25%;
-        height: 35px;
+        height: 2.1875em;
     }
 
     textarea {

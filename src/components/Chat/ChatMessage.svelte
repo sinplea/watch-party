@@ -26,17 +26,17 @@
     .chat-message {
         font-family: 'Mukta', sans-serif;
         padding: 0 2%;
-        max-width: 100%;
+        width: 100%;
         word-wrap: break-word;
     }
     
     .created-at {
-        font-size: 8px;
+        font-size: 0.5em;
         color: #919191;
     }
 
     .sender, .message-body {
-        font-size: 14px;
+        font-size: 0.875em;
     }
 
     .sender {

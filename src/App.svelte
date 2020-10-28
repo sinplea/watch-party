@@ -6,10 +6,7 @@
     <script src="https://apis.google.com/js/api.js" on:load={handleGoogleAPI}></script>
 </svelte:head>
 <script lang="ts">
-    import ChatPanel from './components/Chat/ChatPanel.svelte';
-    import TopBar from './components/TopBar/TopBar.svelte';
-    import VideoPlayer from './components/VideoPlayer/VideoPlayer.svelte';
-
+    import MainPage from './pages/Main.svelte';
     /**
      * Below sets up google api connection for handling youtube queries in later
      * components. See components/TopBar/TopBarSearch.svelte for example.
@@ -33,7 +30,5 @@
 </script>
 
 <main>
-    <TopBar />
-    <VideoPlayer />
-    <ChatPanel />
+    <MainPage></MainPage>
 </main>
