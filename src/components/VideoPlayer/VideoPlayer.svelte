@@ -56,4 +56,12 @@
         width: 100%;
         grid-row: 2 / 3;
     }
+
+    #player {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        margin-bottom: -10px;
+    }
 </style>

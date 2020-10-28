@@ -14,7 +14,7 @@
     .main-page-wrapper {
         display: grid;
         height: 100vh;
-        grid-template-columns: 75vw 25vw;
+        grid-template-columns: 80vw 20vw;
         grid-template-rows: 6vh auto;
     }
 </style>
