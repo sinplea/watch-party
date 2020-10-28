@@ -16,19 +16,19 @@
         align-self: center;
         justify-self: end;
         background-color: #fff;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         margin-right: 10%;
         border-radius: 5px;
         text-align: center;
+        display: table;
     }
 
     .material-icons {
-        font-size: 28px;
-        padding-top: 5px;
+        display: table-cell;
+        vertical-align: middle;
+        font-size: 1.375em;
+        margin: 0 auto;
         color: #EB3636;
-        outline: none;
-        border: none;
-        background: none;
     }
 </style>

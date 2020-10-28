@@ -14,7 +14,8 @@
         display: grid;
         grid-template-columns: 10% 70% 20%;
         width: 100%;
-        height: 100px;
+        min-height: 6vh;
+        max-height: 6vh;
         background-color: #EB3636;
     }
 
@@ -22,10 +23,10 @@
         grid-column-start: 1;
         grid-column-end: 2;
         align-self: center;
-        padding-left: 20px;
+        padding-left: 2%;
         justify-self: center;
         font-family: 'Mukta', sans-serif;
-        font-size: 15px;
+        font-size: 1.25em;
         font-weight: 700;
         color: #ffffff;
     }

@@ -1,14 +1,19 @@
 <script lang="ts">
+    import { video } from '../../stores/VideoStore'
     import type { YouTubeSearchResponseItem } from '../../lib/YouTubeInterfaces';
 
     export let videoInfo: YouTubeSearchResponseItem;
     export let index: number;
     $: accented = index % 2 === 0
+
+    function selectVideo(e: MouseEvent) {
+        video.set(videoInfo);
+    };
 </script>
 
-<div class="preview-result-wrapper {accented ? 'accented' : ''}">
+<div on:click={selectVideo} class="preview-result-wrapper {accented ? 'accented' : ''}">
     <img 
-        src={videoInfo.snippet.thumbnails.high.url} 
+        src={videoInfo.snippet.thumbnails.medium.url} 
         alt="Thumbnail for video {videoInfo.snippet.title}">
     <div class="video-text-info">
         <div class="result-title">{videoInfo.snippet.title}</div>
@@ -20,7 +25,7 @@
 <style>
     .preview-result-wrapper {
         width: 100%;
-        height: 120px;
+        height: 33.3%;
         display: grid;
         grid-template-columns: 1fr 3fr;
         background-color: #ffffff;
@@ -34,27 +39,27 @@
     }
 
     img {
-        justify-self: center;
-        align-self:center;
-        object-fit: cover;
-        overflow: none;
         grid-column: 1 / 2;
-        width: 160px;
-        height: 90px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
     }
 
     .result-title {
         align-self: end;
         grid-row: 1 / 2;
-        font-size: 18px;
-        color: #434343
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1.125rem;
+        color: #434343;
     }
     
     .result-description {
         grid-row: 2 / 3;
         max-height: 100%;
-        overflow: none;
-        font-size: 14px;
+        overflow: hidden;
+        font-size: 0.875rem;
         color: #5b5b5b;        
     }
 

@@ -73,23 +73,23 @@
 
 <style>
     .top-bar-search-wrapper {
-        width: 680px;
+        width: 30vw;
         grid-column-start: 2;
         grid-column-end: 3;
         align-self: center;
-        padding-left: 20px;
-        height: 40px;
+        padding-left: 1.25%;
+        height: 35px;
     }
 
     textarea {
         width: 100%;
-        height: 40px;
+        height: 100%;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
         font-family: 'Mukta', sans-serif;
         font-weight: lighter;
-        padding-top: 10px;
+        padding-top: 0.625em;
         box-sizing: border-box;
         resize: none;
     }
