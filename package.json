@@ -50,6 +50,7 @@
   "dependencies": {
     "@beyonk/async-script-loader": "^2.0.0",
     "@types/gapi": "0.0.39",
+    "@types/youtube": "0.0.39",
     "dotenv": "^8.2.0",
     "material-design-icons": "^3.0.1",
     "sirv-cli": "^1.0.0"

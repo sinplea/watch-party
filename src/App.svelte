@@ -8,6 +8,7 @@
 <script lang="ts">
     import ChatPanel from './components/Chat/ChatPanel.svelte';
     import TopBar from './components/TopBar/TopBar.svelte';
+    import VideoPlayer from './components/VideoPlayer/VideoPlayer.svelte';
 
     /**
      * Below sets up google api connection for handling youtube queries in later
@@ -33,5 +34,6 @@
 
 <main>
     <TopBar />
+    <VideoPlayer />
     <ChatPanel />
 </main>
