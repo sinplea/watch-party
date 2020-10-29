@@ -29,6 +29,8 @@
         width: 100%;
         grid-column: 2 / 3;
         grid-row: 2 / 3;
+        border-left: 4px solid white;
+        box-sizing: border-box;
     }
 
     .chat-panel {
@@ -36,7 +38,7 @@
         width: 100%;
         height: 100%;
         grid-template-columns: minmax(0, 90vh);
-        grid-template-rows: 6% auto 12%;
+        grid-template-rows: 6% auto 8%;
     }
 
     .top-bar {
@@ -56,5 +58,6 @@
         grid-row-start: 1;
         grid-row-end: 2;
         align-self: end;
+        border-bottom: 4px solid white;
     }
 </style>

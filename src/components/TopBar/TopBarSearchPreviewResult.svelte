@@ -1,6 +1,9 @@
 <script lang="ts">
     import { video } from '../../stores/VideoStore'
     import type { YouTubeSearchResponseItem } from '../../lib/YouTubeInterfaces';
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
 
     export let videoInfo: YouTubeSearchResponseItem;
     export let index: number;
@@ -8,6 +11,7 @@
 
     function selectVideo(e: MouseEvent) {
         video.set(videoInfo);
+        dispatch('videoSelcted');
     };
 </script>
 
@@ -32,10 +36,16 @@
         font-family: 'Lato', sans-serif;
     }
 
+    .preview-result-wrapper:hover {
+        cursor: pointer;
+    }
+
     .video-text-info {
         display: grid;
         grid-template-rows: 1fr 3fr;
         grid-column: 2 / 3;
+        padding-left: 2%;
+        width: 98%;
     }
 
     img {
@@ -51,16 +61,17 @@
         grid-row: 1 / 2;
         white-space: nowrap;
         overflow: hidden;
-        font-size: 1.125rem;
+        font-size: 1em;
         color: #434343;
     }
     
     .result-description {
         grid-row: 2 / 3;
-        max-height: 100%;
+        max-height: 98%;
         overflow: hidden;
-        font-size: 0.875rem;
+        font-size: 0.8em;
         color: #5b5b5b;        
+        padding-top: 2%;
     }
 
     .accented {

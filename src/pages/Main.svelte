@@ -14,7 +14,9 @@
     .main-page-wrapper {
         display: grid;
         height: 100vh;
-        grid-template-columns: 80vw 20vw;
+        grid-template-columns: 80vw auto;
         grid-template-rows: 6vh auto;
+        background-color: #f0f0f0;
+        color: #434343;
     }
 </style>

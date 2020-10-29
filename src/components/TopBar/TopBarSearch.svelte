@@ -22,6 +22,7 @@
             tryToRequest(search);
         } else {
             isLoadingPreview = false;
+            isPreviewActive = false;
         };
     };
 
@@ -36,7 +37,6 @@
         gapi.client.youtube.search.list(request)
             .then(function(res) {
                 const results: YouTubeSearchResponse = res.result; 
-                console.log(results);
                 searchResults = results.items;
                 isLoadingPreview = false;
             },
@@ -57,6 +57,10 @@
             requestYoutubeSearchResults(search);
         }, KEYDOWN_MS_WAIT_PERIOD)
     }
+
+    function handleVideoSelection() {
+        searchValue = '';
+    }
 </script>
 
 <div class="top-bar-search-wrapper">
@@ -67,7 +71,11 @@
         bind:value={searchValue}></textarea>
     
     {#if isPreviewActive}
-        <TopBarSearchPreview loading={isLoadingPreview} elements={searchResults}></TopBarSearchPreview>
+        <TopBarSearchPreview 
+            on:videoSelected={handleVideoSelection}
+            loading={isLoadingPreview} 
+            elements={searchResults}>
+        </TopBarSearchPreview>
     {/if}
 </div>
 
@@ -92,5 +100,11 @@
         padding-top: 0.625em;
         box-sizing: border-box;
         resize: none;
+        padding-left: 1%;
+        border: none;
+    }
+
+    ::placeholder {
+        color: #AAA;
     }
 </style>

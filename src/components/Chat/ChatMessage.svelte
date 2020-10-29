@@ -25,8 +25,8 @@
 <style>
     .chat-message {
         font-family: 'Mukta', sans-serif;
-        padding: 0 2%;
-        width: 100%;
+        width: 98%;
+        padding-left: 2%;
         word-wrap: break-word;
     }
     

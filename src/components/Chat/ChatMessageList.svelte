@@ -52,7 +52,8 @@ import { afterUpdate, beforeUpdate } from 'svelte';
         grid-row-start: 2;
         grid-row-end: 3;
         align-self: center;
-        max-height: 100%;
+        max-height: 98%;
+        padding-top: 2%;
         line-height: 1.375em;
         overflow: auto;
     }

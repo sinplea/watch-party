@@ -56,6 +56,7 @@
         align-self: end;
         padding: 0 4%;
         padding-top: 4%;
+        align-self: start;
         /*margin-bottom: 2%;*/
     }
 
@@ -68,7 +69,13 @@
         border-radius: 5px;
         font-family: 'Mukta', sans-serif;
         font-weight: lighter;
-        padding-top: 0.625em;
+        padding-top: 0.8em;
         box-sizing: border-box;
+        padding-left: 1%;
+        border: none;
+    }
+    
+    ::placeholder {
+        color: #AAA;
     }
 </style>
