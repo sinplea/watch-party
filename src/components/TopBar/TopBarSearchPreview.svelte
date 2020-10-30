@@ -1,6 +1,6 @@
 <script lang="ts">
     import TopBarSearchPreviewResult from './TopBarSearchPreviewResult.svelte';
-    import type { YouTubeSearchResponseItem } from '../../lib/YouTubeInterfaces';
+    import type { YouTubeSearchResponseItem } from '../../lib/Interfaces/YouTubeInterfaces';
     import { createEventDispatcher } from 'svelte';
     
     const dispatch = createEventDispatcher();

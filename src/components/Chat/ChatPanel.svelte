@@ -2,7 +2,7 @@
     import ChatMessageList from './ChatMessageList.svelte';
     import ChatInput from './ChatInput.svelte';
     import { sender } from '../../stores/ChatStore';
-    import type { Message } from '../../lib/ChatInterfaces';
+    import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 
     export let messages: Message[] = [];
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Message } from '../../lib/ChatInterfaces';
+    import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 
     export let index: number = 0;
     export let message: Message = {

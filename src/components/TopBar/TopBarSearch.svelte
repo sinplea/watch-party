@@ -1,6 +1,6 @@
 <script lang="ts">
     import TopBarSearchPreview from './TopBarSearchPreview.svelte';
-    import type { YouTubeSearchResponse, YouTubeSearchResponseItem } from '../../lib/YouTubeInterfaces';
+    import type { YouTubeSearchResponse, YouTubeSearchResponseItem } from '../../lib/Interfaces/YouTubeInterfaces';
 
     let searchValue: string = "";
     let isPreviewActive: boolean = false;

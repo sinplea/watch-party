@@ -2,7 +2,7 @@
 import { afterUpdate, beforeUpdate } from 'svelte';
 
     import ChatMessage from './ChatMessage.svelte';
-    import type { Message } from '../../lib/ChatInterfaces';
+    import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 
     export let messages: Message[];
 

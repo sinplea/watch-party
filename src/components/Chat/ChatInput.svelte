@@ -1,6 +1,6 @@
 <script lang="ts">
     import { createEventDispatcher } from 'svelte';
-    import type { Message, Sender } from '../../lib/ChatInterfaces';
+    import type { Message, Sender } from '../../lib/Interfaces/ChatInterfaces';
 
     const dispatch = createEventDispatcher();
 

@@ -1,6 +1,6 @@
 <script lang="ts">
     import { video } from '../../stores/VideoStore'
-    import type { YouTubeSearchResponseItem } from '../../lib/YouTubeInterfaces';
+    import type { YouTubeSearchResponseItem } from '../../lib/Interfaces/YouTubeInterfaces';
     import { createEventDispatcher } from 'svelte';
 
     const dispatch = createEventDispatcher();
