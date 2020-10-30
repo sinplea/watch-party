@@ -1,3 +1,4 @@
+// @ts-ignore
 import ChatInput from '../../components/Chat/ChatInput.svelte';
 import { action } from '@storybook/addon-actions';
 import type { Sender } from '../../lib/Interfaces/ChatInterfaces';

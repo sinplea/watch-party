@@ -1,3 +1,4 @@
+// @ts-ignore
 import ChatPanel from '../../components/Chat/ChatPanel.svelte';
 import { mockData as mockMessages } from './ChatMessageList.stories';
 

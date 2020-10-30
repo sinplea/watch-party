@@ -1,3 +1,4 @@
+// @ts-ignore
 import ChatMessage from '../../components/Chat/ChatMessage.svelte';
 import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 
