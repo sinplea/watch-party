@@ -38,4 +38,4 @@ function createSender() {
 };
 
 // Store exports
-export const sender = createSender();
+export const senderStore = createSender();
