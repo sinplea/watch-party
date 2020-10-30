@@ -4,7 +4,7 @@
 
 <script lang="ts">
     import { afterUpdate } from 'svelte';
-    import { video } from '../../stores/VideoStore';
+    import { videoStore } from '../../stores/VideoStore';
     import 'youtube';
 
     let player: YT.Player;
@@ -14,11 +14,11 @@
     })
 
     function createPlayer() {
-        if ($video !== null) {
+        if ($videoStore !== null) {
             player = new YT.Player('player', {
                 height: '390',
                 width: '640',
-                videoId: $video.id.videoId,
+                videoId: $videoStore.id.videoId,
                 events: {
                     'onReady': onPlayerReady,
                 }
@@ -38,8 +38,8 @@
     }
 </script>
 
-<div class="video-player-wrapper {$video === null ? 'no-video' : ''}">
-    {#if $video === null}
+<div class="video-player-wrapper {$videoStore === null ? 'no-video' : ''}">
+    {#if $videoStore === null}
         <div class="no-video-wrapper">
             <div class="material-icons">videocam_off</div>
             <div class="no-video-title">Search for a YouTube video above</div>

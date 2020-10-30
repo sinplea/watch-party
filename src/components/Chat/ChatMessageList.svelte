@@ -1,6 +1,5 @@
 <script lang="ts">
-import { afterUpdate, beforeUpdate } from 'svelte';
-
+    import { afterUpdate, beforeUpdate } from 'svelte';
     import ChatMessage from './ChatMessage.svelte';
     import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 

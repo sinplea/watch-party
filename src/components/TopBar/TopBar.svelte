@@ -1,12 +1,19 @@
 <script lang="ts">
     import TopBarSearch from './TopBarSearch.svelte';
     import TopBarOptionButton from './TopBarOptionButton.svelte';
+    import { createEventDispatcher } from 'svelte';
+
+    const dispatch = createEventDispatcher();
+
+    function dispatchModalOpened() {
+        dispatch('configureModalOpened');
+    };
 </script>
 
 <div class="top-bar-wrapper">
     <div class="logo">Watch Party</div>
     <TopBarSearch></TopBarSearch>
-    <TopBarOptionButton></TopBarOptionButton>
+    <TopBarOptionButton on:configureModalOpened={dispatchModalOpened}></TopBarOptionButton>
 </div>
 
 <style>
