@@ -1,8 +1,11 @@
 <script lang="ts">
+    import { createEventDispatcher } from 'svelte'
+
+    const dispatch = createEventDispatcher();
+
     function handleClick(e: MouseEvent) {
-        alert('Pushed')
-        // TODO Design modal for configuration popup.
-    }
+        dispatch('configureModalOpened');
+    };
 </script>
 
 <div class="configuration-button" on:click={handleClick}>
@@ -22,6 +25,10 @@
         border-radius: 5px;
         text-align: center;
         display: table;
+    }
+
+    .configuration-button:hover {
+        cursor: pointer;
     }
 
     .material-icons {

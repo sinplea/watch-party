@@ -2,10 +2,25 @@
     import ChatPanel from '../components/Chat/ChatPanel.svelte';
     import TopBar from '../components/TopBar/TopBar.svelte';
     import VideoPlayer from '../components/VideoPlayer/VideoPlayer.svelte';
+    import ConfigureModal from '../components/Modals/ConfigureModal/ConfigureModal.svelte';
+
+    let configureModalOpened: boolean = false;
+
+    function openModal(e: CustomEvent) {
+        configureModalOpened = true;
+    }
+
+    function closeModal(e: CustomEvent) {
+        configureModalOpened = false;
+    }
 </script>
 
+{#if configureModalOpened}
+    <ConfigureModal on:close={closeModal} />
+{/if}
+
 <div class="main-page-wrapper">
-    <TopBar></TopBar>
+    <TopBar on:configureModalOpened={openModal}></TopBar>
     <VideoPlayer></VideoPlayer>
     <ChatPanel></ChatPanel>
 </div>
