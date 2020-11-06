@@ -3,38 +3,38 @@
 </svelte:head>
 
 <script lang="ts">
-    import { afterUpdate } from 'svelte';
+    import { afterUpdate, tick } from 'svelte';
     import { videoStore } from '../../stores/VideoStore';
+    import type { YouTubeSearchResponseItem } from '../../lib/Interfaces/YouTubeInterfaces';
     import 'youtube';
 
-    let player: YT.Player;
+    let player: YT.Player = null;
 
-    afterUpdate(() => {
-        createPlayer()
-    })
+    $: handlePlayer($videoStore);
 
-    function createPlayer() {
-        if ($videoStore !== null) {
-            player = new YT.Player('player', {
-                height: '390',
-                width: '640',
-                videoId: $videoStore.id.videoId,
-                events: {
-                    'onReady': onPlayerReady,
-                }
-            });
+    async function handlePlayer(video: YouTubeSearchResponseItem) {
+        await tick();
+        
+        if (player && video) {
+            player.loadVideoById($videoStore.id.videoId);
+        } else if (!player && video){
+            createPlayer($videoStore);
         }
+    }
+
+    function createPlayer(video: YouTubeSearchResponseItem) {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: video.id.videoId,
+            events: {
+                'onReady': onPlayerReady,
+            }
+        });
     }
 
     function onPlayerReady(event: YT.PlayerEvent) {
         event.target.playVideo();
-    }
-
-    function onLoad() {
-        // @ts-ignore
-        window.YT.ready(() => {
-            createPlayer();
-        })
     }
 </script>
 

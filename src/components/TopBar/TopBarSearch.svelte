@@ -15,6 +15,11 @@
     const KEYDOWN_MS_WAIT_PERIOD: number = 1000
 
     function tryAndCreatePreview(search: string) {
+        console.log({
+            searchValue,
+            isPreviewActive,
+            isLoadingPreview,
+        })
         isPreviewActive = search !== '';
 
         if (search.length > 2) {
