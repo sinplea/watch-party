@@ -49,14 +49,12 @@
 
 <style>
     .chat-input-wrapper {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 3;
-        grid-row-end: 4;
-        align-self: end;
-        padding: 0 4%;
-        padding-top: 4%;
         align-self: start;
+        justify-self: end;
+        grid-column: 2 / 3;
+        width: 90%;
+        align-self: center;
+        justify-self: start;
         /*margin-bottom: 2%;*/
     }
 
@@ -69,10 +67,10 @@
         border-radius: 5px;
         font-family: 'Mukta', sans-serif;
         font-weight: lighter;
-        padding-top: 0.8em;
+        padding-top: 0.7em;
         box-sizing: border-box;
         padding-left: 1%;
-        border: none;
+        border: 1px solid gray;
     }
     
     ::placeholder {

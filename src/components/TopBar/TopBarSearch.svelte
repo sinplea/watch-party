@@ -81,30 +81,63 @@
 
 <style>
     .top-bar-search-wrapper {
-        width: 30vw;
-        grid-column-start: 2;
-        grid-column-end: 3;
+        width: 100%;
+        margin: 0;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
         align-self: center;
-        padding-left: 1.25%;
-        height: 2.1875em;
     }
 
     textarea {
-        width: 100%;
+        display: inline-block;
         height: 100%;
+        width: 100%;
+        margin: 0;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         border-radius: 5px;
         font-family: 'Mukta', sans-serif;
         font-weight: lighter;
-        padding-top: 0.625em;
         box-sizing: border-box;
         resize: none;
         padding-left: 1%;
-        border: none;
+        border: 1px solid gray;
+        display: block;
     }
 
     ::placeholder {
         color: #AAA;
+    }
+
+    @media (max-width: 768px) {
+        .top-bar-search-wrapper {
+            justify-self: center;
+        }
+
+        textarea {
+            padding-top: 0.5em;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .top-bar-search-wrapper {
+            height: 2em;
+            justify-self: start;
+        }
+
+        textarea {
+            padding-top: 0.5em;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        .top-bar-search-wrapper {
+            height: 2.1875em;
+        }
+
+        textarea {
+            padding-top: 0.625em;
+        }
+
     }
 </style>

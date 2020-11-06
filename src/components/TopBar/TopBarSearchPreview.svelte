@@ -34,21 +34,24 @@
 
 <style>
     .top-bar-search-preview-wrapper {
-        width: 30vw;
         height: 35vh;
         position: absolute;
+        top: 6vh;
+
         overflow: auto;
+
         border-radius: 0px 0px 5px 5px;
         filter: drop-shadow(0px 4px 4px rgba(0,0,0,25%));
-        top: 6vh;
     }
 
     .loading-grid {
+        height: 35vh;
+
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: auto;
+
         background-color: white;
-        height: 35vh;
         font-family: 'Mukta', sans-serif;
         color: #434343;
     }
@@ -56,5 +59,17 @@
     .loading-wrapper {
         text-align: center;
         align-self: center;
+    }
+
+    @media (min-width: 768px) {
+        .top-bar-search-preview-wrapper {
+            width: 60%;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        .top-bar-search-preview-wrapper {
+            width: 50%;
+        }
     }
 </style>
