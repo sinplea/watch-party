@@ -1,4 +1,9 @@
 <svelte:head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Watch Party: Where you can YouTube videos together">
+    <meta name="keywords" content="youtube, video sharing, webrtc, websockets">
+    <meta name="author" content="Alex Werner @sinplea">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
