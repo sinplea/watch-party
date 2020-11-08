@@ -117,6 +117,7 @@
     @media (max-width: 768px) {
         .top-bar-search-wrapper {
             justify-self: center;
+            height: 2.1em;
         }
 
         textarea {
@@ -126,7 +127,7 @@
 
     @media (min-width: 768px) {
         .top-bar-search-wrapper {
-            height: 2em;
+            height: 2.15em;
             justify-self: start;
         }
 

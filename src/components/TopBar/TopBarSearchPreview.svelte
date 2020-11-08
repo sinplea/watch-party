@@ -61,6 +61,19 @@
         align-self: center;
     }
 
+    @media (max-width: 768px) {
+        .top-bar-search-preview-wrapper {
+            height: 60vh;
+            width: 100vw;
+            top: 8vh;
+            left: 0;
+        }
+
+        .loading-grid {
+            height: 60vh;
+        }
+    }
+
     @media (min-width: 768px) {
         .top-bar-search-preview-wrapper {
             width: 60%;

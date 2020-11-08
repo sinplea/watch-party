@@ -42,9 +42,13 @@
     
     @media (max-width: 768px) {
         .logo {
-            font-size: 1em;
+            font-size: 0.9em;
+            text-align: center;
         }
 
+        .top-bar-wrapper {
+            grid-template-columns: 20% 60% 20%;
+        }
     }
 
     @media (min-width: 768px) {

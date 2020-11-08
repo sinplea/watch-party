@@ -19,19 +19,47 @@
     <img 
         src={videoInfo.snippet.thumbnails.medium.url} 
         alt="Thumbnail for video {videoInfo.snippet.title}">
-    <div class="video-text-info">
-        <div class="result-title">{videoInfo.snippet.title}</div>
-        <div class="result-description">{videoInfo.snippet.description}</div>
-        <!-- <div class="result-attributes">{videoInfo.snippet.views} views • {previewResult.publishedAt}</div> -->
-    </div>
+    <div class="result-title">{videoInfo.snippet.title}</div>
+    <div class="result-description">{videoInfo.snippet.description}</div>
 </div>
 
 <style>
+    @media (max-width: 768px) {
+        .preview-result-wrapper {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .result-title {
+            font-size: 1.2em;
+        }
+
+        .result-description {
+            font-size: 0.9em;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .preview-result-wrapper {
+            grid-template-columns: 1fr 3fr;
+        }
+
+        .result-title {
+            font-size: 1em;
+        }
+
+        .result-description {
+            font-size: 0.825em;
+        }
+    }
+
     .preview-result-wrapper {
         width: 100%;
         height: 33.3%;
+
         display: grid;
-        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 2fr;
+        gap: 10% 2%;
+
         background-color: #ffffff;
         font-family: 'Lato', sans-serif;
     }
@@ -40,38 +68,36 @@
         cursor: pointer;
     }
 
-    .video-text-info {
-        display: grid;
-        grid-template-rows: 1fr 3fr;
-        grid-column: 2 / 3;
-        padding-left: 2%;
-        width: 98%;
-    }
-
     img {
-        grid-column: 1 / 2;
-        object-fit: cover;
         width: 100%;
         height: 100%;
+
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        object-fit: cover;
+
         overflow: hidden;
     }
 
     .result-title {
-        align-self: end;
+        grid-column: 2 / 3;
         grid-row: 1 / 2;
-        white-space: nowrap;
-        overflow: hidden;
-        font-size: 1em;
+        align-self: end;
+
+        font-weight: 500;
         color: #434343;
+
+        overflow: hidden;
     }
     
     .result-description {
+        grid-column: 2 / 3;
         grid-row: 2 / 3;
-        max-height: 98%;
+        align-self: start;
+
+        color: #5b5b5b;
+
         overflow: hidden;
-        font-size: 0.8em;
-        color: #5b5b5b;        
-        padding-top: 2%;
     }
 
     .accented {
