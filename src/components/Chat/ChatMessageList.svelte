@@ -46,13 +46,13 @@
 
 <style>
     .message-list-wrapper {
-        grid-column-start: 1;
-        grid-column-end: 2;
-        grid-row-start: 2;
-        grid-row-end: 3;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
         align-self: center;
+
         max-height: 98%;
         padding-top: 2%;
+
         line-height: 1.375em;
         overflow: auto;
     }

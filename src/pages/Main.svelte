@@ -23,44 +23,37 @@
         Based on most common screen sizes of 2019
         https://uxtricks.design/blogs/ux-design/responsive-design/
     */
+    @media (max-width: 375px) {
+        .main-page-wrapper {
+            height: 160vh;
+            grid-template-columns: 100%;
+            grid-template-rows: 8vh 60vh auto;
+        }
+    }
+
 
     @media (min-width: 375px) {
         .main-page-wrapper {
+            height: 160vh;
             grid-template-columns: 100%;
-            grid-template-rows: 8vh 60vh 60vh;
-            height: 100%;
+            grid-template-rows: 8vh 60vh auto;
         }
     }
 
-    @media (max-width: 375px) {
-        .main-page-wrapper {
-            grid-template-columns: 100%;
-            grid-template-rows: 8vh 60vh 60vh;
-            height: 100%;
-        }
-    }
-
+    
     @media (min-width: 768px) {
         .main-page-wrapper {
+            height: 160vh;
             grid-template-columns: 100%;
-            grid-template-rows: 8vh 60vh 60vh;
-            height: 100%;
+            grid-template-rows: 8vh 60vh auto;
         }
     }
 
     @media (min-width: 1366px) {
         .main-page-wrapper {
+            height: 100vh;
             grid-template-columns: 80vw auto;
             grid-template-rows: 8vh auto;
-            height: 100vh;
-        }
-    }
-
-    @media (min-width: 1920px) {
-        .main-page-wrapper {
-            grid-template-columns: 80vw auto;
-            grid-template-rows: 8vh auto;
-            height: 100vh;
         }
     }
 </style>

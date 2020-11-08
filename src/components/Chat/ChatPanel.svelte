@@ -15,8 +15,9 @@
 
 <div class="chat-panel-wrapper">
 <div class="chat-panel">
-        <h2 class="top-bar">CHAT ROOM</h2>
+        <h2 class="title">CHAT ROOM</h2>
         <div class="seperator"></div>
+
         <ChatMessageList messages={messages}></ChatMessageList>
 
         <div class="chat-input">
@@ -35,6 +36,7 @@
 
         .chat-panel {
             grid-template-columns: minmax(0, 90vh);
+            grid-template-rows: 6% auto 8%;
         }
     }
 
@@ -46,6 +48,8 @@
 
         .chat-panel {
             grid-template-columns: 100%;
+            grid-template-rows: 0.125fr 2fr 0.125fr;
+            border-top: 1px solid #d1d1d1;
         }
     }
 
@@ -60,10 +64,9 @@
         display: grid;
         width: 100%;
         height: 100%;
-        grid-template-rows: 6% auto 8%;
     }
 
-    .top-bar {
+    .title {
         font-family: 'Mukta', sans-serif;
         font-size: 1.125em;
         text-align: center;
