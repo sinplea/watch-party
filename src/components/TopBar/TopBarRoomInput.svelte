@@ -113,6 +113,8 @@
         border-radius: 5px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
+
+        cursor: pointer;
     }
     
     .burger {
