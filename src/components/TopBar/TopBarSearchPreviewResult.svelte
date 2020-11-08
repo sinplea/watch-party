@@ -7,34 +7,46 @@
 
     export let videoInfo: YouTubeSearchResponseItem;
     export let index: number;
+
+    let mediaQuery: MediaQueryList = window.matchMedia('(max-width: 768px)');
+    let isMobile: boolean = mediaQuery.matches;
+
     $: accented = index % 2 === 0
+
+    mediaQuery.addEventListener('change', () => {
+        isMobile = mediaQuery.matches;
+    });
 
     function selectVideo(e: MouseEvent) {
         videoStore.set(videoInfo);
         dispatch('videoSelcted');
     };
+
+    
 </script>
 
 <div on:click={selectVideo} class="preview-result-wrapper {accented ? 'accented' : ''}">
-    <img 
-        src={videoInfo.snippet.thumbnails.medium.url} 
-        alt="Thumbnail for video {videoInfo.snippet.title}">
-    <div class="result-title">{videoInfo.snippet.title}</div>
-    <div class="result-description">{videoInfo.snippet.description}</div>
+    {#if !isMobile}
+        <img 
+           src={videoInfo.snippet.thumbnails.medium.url} 
+           alt="Thumbnail for video {videoInfo.snippet.title}">
+    {/if}
+        <div class="result-title">{videoInfo.snippet.title}</div>
+        <div class="result-description">{videoInfo.snippet.description}</div>
 </div>
 
 <style>
     @media (max-width: 768px) {
         .preview-result-wrapper {
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: auto;
         }
 
         .result-title {
-            font-size: 1.2em;
+            font-size: 1em;
         }
 
         .result-description {
-            font-size: 0.9em;
+            font-size: 0.825em;
         }
     }
 
