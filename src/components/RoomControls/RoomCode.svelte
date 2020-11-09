@@ -23,10 +23,10 @@
             on:click={hide}
             class="material-icons">visibility_off</span>
         
-            <div class="room-code">
-                <span class="title">Room:</span>
-                {isHidden ? '' : roomCode}
-            </div>
+        <div class="room-code">
+            <span class="title">Room:</span>
+            {isHidden ? '' : roomCode}
+        </div>
     {/if}
 </div>
 

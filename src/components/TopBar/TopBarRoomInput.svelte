@@ -18,19 +18,14 @@
         dispatch('changeRoom', { room: roomCodeInput });
     };
 
-    function toggleSideBar(): void {
-        isSideBarHidden = !isSideBarHidden;
+    function emitToggleSidebar(): void {
+        dispatch('toggleSidebar');
     };
 </script>
 
-{#if !isSideBarHidden}
-     <!-- content here -->
-    
-{/if}
-
 <div class="top-bar-room-input-container">
     {#if isMobile}
-        <div class="menu-control material-icons" on:click={toggleSideBar}>menu</div>
+        <div class="menu-control material-icons" on:click={emitToggleSidebar}>menu</div>
     {:else}
         <RoomCode></RoomCode>
         <input 

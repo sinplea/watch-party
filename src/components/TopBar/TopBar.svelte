@@ -5,15 +5,21 @@
 
     const dispatch = createEventDispatcher();
 
-    function dispatchChangeRoom(e: CustomEvent): void {
+    function emitChangeRoom(e: CustomEvent): void {
         dispatch('changeRoom', e.detail);
+    };
+
+    function emitToggleSideBar(e: CustomEvent): void {
+        dispatch('toggleSideBar');
     };
 </script>
 
 <div class="top-bar-wrapper">
     <div class="logo">Watch Party</div>
     <TopBarSearch></TopBarSearch>
-    <TopBarRoomInput on:changeRoom={dispatchChangeRoom}></TopBarRoomInput>
+    <TopBarRoomInput 
+        on:toggleSidebar={emitToggleSideBar}
+        on:changeRoom={emitChangeRoom}></TopBarRoomInput>
 </div>
 
 <style>

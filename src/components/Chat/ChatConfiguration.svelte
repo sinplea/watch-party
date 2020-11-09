@@ -49,6 +49,12 @@
 <span on:click={toggleConfigPanel} class="config-btn material-icons">settings</span>
 
 <style>
+    @media (max-width: 1366px) {
+        .config-panel, .config-btn {
+            display: none;
+        }
+    }
+
     input {
         width: 90%;
         margin-bottom: 4%;

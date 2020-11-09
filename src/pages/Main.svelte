@@ -2,13 +2,27 @@
     import ChatPanel from '../components/Chat/ChatPanel.svelte';
     import TopBar from '../components/TopBar/TopBar.svelte';
     import VideoPlayer from '../components/VideoPlayer/VideoPlayer.svelte';
+    import SideBar from '../components/SideBar/SideBar.svelte';
+
+    let isSideBarActive: boolean = false;
+
+    function toggleSideBar(e: CustomEvent): void {
+        isSideBarActive = !isSideBarActive;
+    }
 </script>
 
+
+
 <div class="main-page-wrapper">
-    <TopBar></TopBar>
+    <TopBar on:toggleSideBar={toggleSideBar}></TopBar>
     <VideoPlayer></VideoPlayer>
     <ChatPanel></ChatPanel>
 </div>
+
+{#if isSideBarActive}
+    <SideBar on:toggleSideBar={toggleSideBar}></SideBar>
+{/if}
+
 
 <style>
     .main-page-wrapper {
