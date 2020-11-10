@@ -3,7 +3,7 @@
   <h3 align="center">Watch Party</h3>
 
   <p align="center">
-    A frontend design project for a shared youtube experience
+    A frontend design project for a shared YouTube experience
     <br />
     <a href="https://github.com/sinplea/watch-party"><strong>Explore the docs »</strong></a>
     <br />
@@ -29,16 +29,15 @@
   - [High Priority](#high-priority)
   - [Medium Priority](#medium-priority)
   - [Low Priority](#low-priority)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Watch Party Screen Shot][watch-party-screenshot]](images/screenshot.png)
+[Screenshot](images/screenshot.png)
 
-Watch Party is a mock frontend design project for an application where you would be able to watch YouTube with your friends. This project was made to practice using emerging frontend tools and test my design skills. I wanted to focus primarly on responsive design and unfamilar frontend tools. Currently, watch party is not deployed because it is missing the integral server code it would require to be functionally. Maybe soon!
+Watch Party is a mock frontend design project for a site where you would be able to watch YouTube in sync with your friends. This project was made to practice using emerging frontend tools and test my design skills. I wanted to focus primarly on responsive design and unfamilar frontend tools. Currently, watch party is not deployed because it is missing the integral server code it would require to function. Maybe soon!
 
 ### Built With
 
@@ -49,10 +48,10 @@ Watch Party is a mock frontend design project for an application where you would
 
 ### Early Designs
 
-To work on my design skills I made low and medium fidelity mockups that I tried to follow as closely as possibly in order to get familiar with a designers workflow.
+To work on my design skills I made low and medium fidelity mockups. I tried to follow these as closely as possible in order to get familiar with a designers workflow.
 
-[Low Fidelity](images/low-fidelity.png)
-[Medium Fidelity](images/medium-fidelity.png)
+* [Low Fidelity](images/low-fidelity.png)
+* [Medium Fidelity](images/medium-fidelity.png)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -66,9 +65,9 @@ To get a local copy up and running follow these simple steps.
 npm install npm@latest -g
 ```
 2. YouTube API Key
-Add YouTube API env variables to a .env file. (NOTE: these vars are exposed on the client. In production, these vars should be retrieved from a secure server).
+Add YouTube API environment variables to a .env file. (NOTE: these vars are exposed on the client. In production, these vars should be retrieved from a secure server).
 
-To get an API key. Follow these [instructions](https://developers.google.com/youtube/v3/getting-started)
+To get an API key. Follow these [instructions.](https://developers.google.com/youtube/v3/getting-started)
 ```sh
 echo 'API_KEY=YOUR_KEY_HERE' >> .env
 ```
@@ -136,17 +135,6 @@ Watch Party is mostly a design project to test my ability to learn new frontend 
 - Custom Logo and Favicon (designed in Adobe Illustrator)
 - Move to [Sapper](https://github.com/sveltejs/sapper) simply to learn the svelte's team preferred way to structuring and developing web apps.
 
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions and feedback are welcomed. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 <!-- LICENSE -->
 ## License
 
@@ -158,7 +146,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Alex Werner - [@sinplea_](https://twitter.com/@sinplea_) - alexanderdwerner@gmail.com
 
 Project Link: [https://github.com/sinplea/watch-party](https://github.com/sinplea/watch-party)
-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
