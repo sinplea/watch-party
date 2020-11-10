@@ -28,11 +28,11 @@
         <div class="menu-control material-icons" on:click={emitToggleSidebar}>menu</div>
     {:else}
         <RoomCode></RoomCode>
-        <input 
-            bind:value={roomCodeInput}
-            placeholder="Enter room code..." 
-            type="password" 
-            name="room-input" id="room-input">
+            <input 
+                bind:value={roomCodeInput}
+                placeholder="Join room..." 
+                type="password" 
+                name="room-input" id="room-input">
         <div class="submit-button" on:click={changeRoom}>Go</div>
     {/if}
 </div>
@@ -48,18 +48,16 @@
 
         grid-column: 3 / 4;
         grid-row: 1 / 2;
+        gap: 20px;
 
-        height: 100%;
         font-size: 1rem;
         color: white;
         font-family: 'Mukta', sans-serif;
     }
 
     input {
-        box-sizing: border-box;
-
         grid-column: 2 / 3;
-
+        box-sizing: border-box;
         font-weight: lighter;
         border: 1px solid gray;
         border-radius: 5px;
@@ -71,7 +69,6 @@
 
 
     .submit-button {
-        height: 90%;
         display: flex;
         align-items: center;
         box-sizing: border-box;

@@ -1,4 +1,4 @@
-import ChatPanel from '../src/stories/Chat/ChatPanel.svelte';
+import ChatPanel from '../src/components/Chat/ChatPanel.svelte'
 import { render, fireEvent, screen } from '@testing-library/svelte';
 import userEvent from '@testing-library/user-event'
 
@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event'
  * https://kentcdodds.com/blog/testing-implementation-details
  * 
  */
-describe('ChatPanel Component', () => {
+describe('ChatPanel Aggregate Component', () => {
     it('should never allow a blank message to be sent', async () => {
         const { getByPlaceholderText } = render(ChatPanel);
         
