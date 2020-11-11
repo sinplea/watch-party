@@ -41,7 +41,7 @@
         .main-page-wrapper {
             height: 160vh;
             grid-template-columns: 100%;
-            grid-template-rows: 8vh 60vh auto;
+            grid-template-rows: 8vh 60vh 92vh;
         }
     }
 
@@ -50,7 +50,7 @@
         .main-page-wrapper {
             height: 160vh;
             grid-template-columns: 100%;
-            grid-template-rows: 8vh 60vh auto;
+            grid-template-rows: 8vh 60vh 92vh;
         }
     }
 
@@ -59,7 +59,7 @@
         .main-page-wrapper {
             height: 160vh;
             grid-template-columns: 100%;
-            grid-template-rows: 8vh 60vh auto;
+            grid-template-rows: 8vh 60vh 92vh;
         }
     }
 
@@ -67,7 +67,7 @@
         .main-page-wrapper {
             height: 100vh;
             grid-template-columns: 80vw auto;
-            grid-template-rows: 8vh auto;
+            grid-template-rows: 8vh 92vh;
         }
     }
 </style>

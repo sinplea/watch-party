@@ -48,6 +48,19 @@
 
 
 <style>
+    @media (max-width: 1366px) {
+        textarea {
+            height: 2.3em;
+            font-size: 0.825em;
+        }
+    }
+
+    @media (min-width: 1366px) {
+        textarea {
+            height: 2.5em;
+        }
+    }
+
     .chat-input-wrapper {
         align-self: start;
         justify-self: end;
@@ -59,7 +72,6 @@
     }
 
     textarea {
-        height: 2.5em;
         width: 100%;
         resize: none;
         -webkit-border-radius: 5px;
