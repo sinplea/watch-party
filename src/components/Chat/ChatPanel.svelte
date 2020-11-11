@@ -35,8 +35,8 @@
         }
 
         .chat-panel {
-            grid-template-columns: minmax(0, 90vh);
-            grid-template-rows: 6% auto 8%;
+            grid-template-columns: minmax(0, 100vh);
+            grid-template-rows: 6% 86% 8%;
         }
     }
 
