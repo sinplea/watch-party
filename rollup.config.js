@@ -10,6 +10,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+const { preprocessOptions } = require("./svelte.config");
+
 const production = !process.env.ROLLUP_WATCH;
 
 function serve() {
@@ -48,7 +50,10 @@ export default {
   },
   plugins: [
     svelte({
-      preprocess: sveltePreprocess(),
+      preprocess: sveltePreprocess({
+        preprocessOptions,
+        sourceMap: !production,
+      }),
       // enable run-time checks when not in production
       dev: !production,
       // we'll extract any component CSS out into
@@ -68,10 +73,7 @@ export default {
       dedupe: ["svelte"],
     }),
     commonjs(),
-    typescript({
-      sourceMap: !production,
-      inlineSources: !production,
-    }),
+    typescript(),
     replace({
       API_KEY: JSON.stringify(process.env.API_KEY),
     }),
