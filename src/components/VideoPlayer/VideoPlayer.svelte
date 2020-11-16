@@ -6,7 +6,6 @@
     import { afterUpdate, tick } from 'svelte';
     import { videoStore } from '../../stores/VideoStore';
     import type { YouTubeSearchResponseItem } from '../../lib/Interfaces/YouTubeInterfaces';
-    import 'youtube';
 
     let player: YT.Player = null;
 
