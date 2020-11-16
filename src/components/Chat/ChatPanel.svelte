@@ -6,10 +6,21 @@
     import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 
     export let messages: Message[] = [];
+    export let socket = null;
+
+    if (socket) {
+      socket.on('message-capture', (message) => {
+        messages = [...messages, message];
+      })
+    }
 
     function postMessage(e: CustomEvent<any>) {
         const message: Message = e.detail.message;
         messages = [...messages, message];
+
+        if (socket) {
+          socket.emit('chat-message', message);
+        }
     };
 </script>
 
