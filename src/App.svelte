@@ -21,6 +21,17 @@
     let socket: unknown;
     let incomingMessage: Message;
 
+    import Router from 'svelte-spa-router';
+    import MainPage from './pages/Main.svelte';
+    import NotFoundPage from './pages/NotFound.svelte';
+    import PartiesPage from './pages/Parties.svelte';
+    
+    const routes = {
+      '/': MainPage,
+      '/parties': PartiesPage,
+      '*': NotFoundPage,
+    }
+
     /**
      * Below sets up google api connection for handling youtube queries in later
      * components. See components/TopBar/TopBarSearch.svelte for example.
@@ -54,5 +65,5 @@
 </script>
 
 <main>
-    <MainPage socket={socket} incomingMessage={incomingMessage}></MainPage>
+    <Router routes={routes}></Router>
 </main>
