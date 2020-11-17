@@ -11,7 +11,16 @@
     <script src="https://apis.google.com/js/api.js" on:load={handleGoogleAPI}></script>
 </svelte:head>
 <script lang="ts">
+    import Router from 'svelte-spa-router';
     import MainPage from './pages/Main.svelte';
+    import NotFoundPage from './pages/NotFound.svelte';
+    import PartiesPage from './pages/Parties.svelte';
+    
+    const routes = {
+      '/': MainPage,
+      '/parties': PartiesPage,
+      '*': NotFoundPage,
+    }
     /**
      * Below sets up google api connection for handling youtube queries in later
      * components. See components/TopBar/TopBarSearch.svelte for example.
@@ -35,5 +44,5 @@
 </script>
 
 <main>
-    <MainPage></MainPage>
+    <Router routes={routes}></Router>
 </main>
