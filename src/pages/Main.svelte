@@ -5,8 +5,8 @@
     import SideBar from '../components/SideBar/SideBar.svelte';
     import type { Message } from '../lib/Interfaces/ChatInterfaces';
 
+    export let socket: unknown;
     export let incomingMessage: Message;
-    export let socket;
 
     let isSideBarActive: boolean = false;
 

@@ -16,8 +16,11 @@
 
     import MainPage from './pages/Main.svelte';
 
-    let socket;
+    // NOTE: @types/socket.io-client is not installing via npm, so idk, try
+    // to fix later. This works though.
+    let socket: unknown;
     let incomingMessage: Message;
+
     /**
      * Below sets up google api connection for handling youtube queries in later
      * components. See components/TopBar/TopBarSearch.svelte for example.
@@ -41,8 +44,9 @@
 
     function handleSocketIO() {
       //@ts-ignore
-      socket = io('http://localhost:8080');
+      socket = io(LUNA_DEV_SERVER);
       
+      //@ts-ignore
       socket.on('message-captured', (message: Message) => {
         incomingMessage = message;
       });

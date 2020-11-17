@@ -5,8 +5,8 @@
     import { senderStore } from '../../stores/ChatStore';
     import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 
+    export let socket: unknown = null;
     export let incomingMessage: Message;
-    export let socket = null;
 
     let messages: Message[] = [];
 
@@ -21,6 +21,7 @@
         updateMessageList(message);
 
         if (socket) {
+          // @ts-ignore
           socket.emit('chat-message-posted', message);
         }
     };

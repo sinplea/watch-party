@@ -76,6 +76,7 @@ export default {
     typescript(),
     replace({
       API_KEY: JSON.stringify(process.env.API_KEY),
+      LUNA_DEV_SERVER: JSON.stringify(process.env.LUNA_DEV_SERVER),
     }),
 
     // In dev mode, call `npm run start` once
