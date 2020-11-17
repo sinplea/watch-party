@@ -5,12 +5,30 @@
     import { senderStore } from '../../stores/ChatStore';
     import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 
-    export let messages: Message[] = [];
+    export let socket: unknown = null;
+    export let incomingMessage: Message;
 
-    function postMessage(e: CustomEvent<any>) {
+    let messages: Message[] = [];
+
+    $: {
+      if (incomingMessage) {
+        updateMessageList(incomingMessage);
+      }
+    }
+
+    function sendMessage(e: CustomEvent<any>) {
         const message: Message = e.detail.message;
-        messages = [...messages, message];
+        updateMessageList(message);
+
+        if (socket) {
+          // @ts-ignore
+          socket.emit('chat-message-posted', message);
+        }
     };
+
+    function updateMessageList(message: Message): void {
+      messages = [...messages, message];
+    }
 </script>
 
 <div class="chat-panel-wrapper">
@@ -22,7 +40,7 @@
 
         <div class="chat-input">
             <ChatConfiguration></ChatConfiguration>
-            <ChatInput sender={$senderStore} on:onMessageSent={postMessage}></ChatInput>
+            <ChatInput sender={$senderStore} on:onMessageSent={sendMessage}></ChatInput>
         </div>
     </div>
 </div>

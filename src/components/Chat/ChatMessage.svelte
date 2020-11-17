@@ -12,7 +12,7 @@
     };
 
     function beautifyDate(time: Date): string {
-        return time.toLocaleTimeString(navigator.language, { hour: '2-digit', minute: '2-digit' });
+        return new Date(time).toLocaleTimeString(navigator.language, { hour: '2-digit', minute: '2-digit' });
     }
 </script>
 

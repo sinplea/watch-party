@@ -3,6 +3,10 @@
     import TopBar from '../components/TopBar/TopBar.svelte';
     import VideoPlayer from '../components/VideoPlayer/VideoPlayer.svelte';
     import SideBar from '../components/SideBar/SideBar.svelte';
+    import type { Message } from '../lib/Interfaces/ChatInterfaces';
+
+    export let socket: unknown;
+    export let incomingMessage: Message;
 
     let isSideBarActive: boolean = false;
 
@@ -11,12 +15,10 @@
     }
 </script>
 
-
-
 <div class="main-page-wrapper">
     <TopBar on:toggleSideBar={toggleSideBar}></TopBar>
     <VideoPlayer></VideoPlayer>
-    <ChatPanel></ChatPanel>
+    <ChatPanel incomingMessage={incomingMessage} socket={socket}></ChatPanel>
 </div>
 
 {#if isSideBarActive}
