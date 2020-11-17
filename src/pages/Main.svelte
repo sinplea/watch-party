@@ -1,18 +1,12 @@
-<svelte:head>
-  <script src="https://cdn.socket.io/socket.io-3.0.1.min.js" on:load={setSocket}></script>
-</svelte:head>
 <script lang="ts">
     import ChatPanel from '../components/Chat/ChatPanel.svelte';
     import TopBar from '../components/TopBar/TopBar.svelte';
     import VideoPlayer from '../components/VideoPlayer/VideoPlayer.svelte';
     import SideBar from '../components/SideBar/SideBar.svelte';
+    import type { Message } from '../lib/Interfaces/ChatInterfaces';
 
-    let socket = null;
-
-    function setSocket() {
-      // @ts-ignore
-      socket = window.io('http://localhost:8080');
-    }
+    export let incomingMessage: Message;
+    export let socket;
 
     let isSideBarActive: boolean = false;
 
@@ -21,12 +15,10 @@
     }
 </script>
 
-
-
 <div class="main-page-wrapper">
     <TopBar on:toggleSideBar={toggleSideBar}></TopBar>
     <VideoPlayer></VideoPlayer>
-    <ChatPanel socket={socket}></ChatPanel>
+    <ChatPanel incomingMessage={incomingMessage} socket={socket}></ChatPanel>
 </div>
 
 {#if isSideBarActive}

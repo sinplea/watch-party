@@ -5,23 +5,29 @@
     import { senderStore } from '../../stores/ChatStore';
     import type { Message } from '../../lib/Interfaces/ChatInterfaces';
 
-    export let messages: Message[] = [];
+    export let incomingMessage: Message;
     export let socket = null;
 
-    if (socket) {
-      socket.on('message-capture', (message) => {
-        messages = [...messages, message];
-      })
+    let messages: Message[] = [];
+
+    $: {
+      if (incomingMessage) {
+        updateMessageList(incomingMessage);
+      }
     }
 
-    function postMessage(e: CustomEvent<any>) {
+    function sendMessage(e: CustomEvent<any>) {
         const message: Message = e.detail.message;
-        messages = [...messages, message];
+        updateMessageList(message);
 
         if (socket) {
-          socket.emit('chat-message', message);
+          socket.emit('chat-message-posted', message);
         }
     };
+
+    function updateMessageList(message: Message): void {
+      messages = [...messages, message];
+    }
 </script>
 
 <div class="chat-panel-wrapper">
@@ -33,7 +39,7 @@
 
         <div class="chat-input">
             <ChatConfiguration></ChatConfiguration>
-            <ChatInput sender={$senderStore} on:onMessageSent={postMessage}></ChatInput>
+            <ChatInput sender={$senderStore} on:onMessageSent={sendMessage}></ChatInput>
         </div>
     </div>
 </div>
