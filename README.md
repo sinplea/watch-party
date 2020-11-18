@@ -32,7 +32,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-| ![Screenshot](images/screenshot.png) |
+| ![Screenshot](screenshots/screenshot.png) |
 |:--:| 
 | *A recent screenshot of the site* |
 
@@ -57,11 +57,11 @@ Watch Party is a web design project that will let people watch YouTube and inter
 
 Design is taking a front seat in this project. Designs are created in [Figma](https://figma.com) and translated into [Svelte](https://github.com/sveltejs/svelte) code as the project progresses.
 
-| ![Low fidelity screenshot](images/low-fidelity.png) | 
+| ![Low fidelity screenshot](screenshots/design/low-fidelity.png) | 
 |:--:| 
 | *The earliest low fidelity mockup* |
 
-Design screenshots can be found in [screenshots/design](images/screenshots/).
+Design screenshots can be found in [screenshots/design](screenshots/design).
 
 <!-- GETTING STARTED -->
 ## Development Setup
