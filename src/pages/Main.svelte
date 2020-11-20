@@ -78,7 +78,7 @@
   </script>
 </svelte:head>
 <div class="main-page-wrapper">
-  <TopBar on:toggleSideBar={toggleSideBar} />
+  <TopBar gridColEnd={3} on:toggleSideBar={toggleSideBar} />
   <VideoPlayer />
   <ChatPanel {incomingMessage} {socket} />
 </div>
