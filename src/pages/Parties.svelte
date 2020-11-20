@@ -1,9 +1,7 @@
-<script lang="ts"></script>
+<script lang="ts">
+</script>
 
-<div class="parties-page">
-  <div class="content">
+<style>
+</style>
 
-  </div>
-</div>
-
-<style></style>
+<div class="parties-page" />

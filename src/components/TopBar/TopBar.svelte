@@ -3,6 +3,13 @@
   import TopBarNavigation from "./TopBarNavigation.svelte";
   import { createEventDispatcher } from "svelte";
 
+  // Because TopBar will be on every page, but each page can be divided into
+  // a different number of columns, I need to be able to define the full with of
+  // the page in terms of columns.
+  //
+  // This is a little hacky/hotfixy but it will work fine for now.
+  export let gridColEnd: number = 0;
+
   const dispatch = createEventDispatcher();
 
   function emitChangeRoom(e: CustomEvent): void {
@@ -21,7 +28,6 @@
     width: 100%;
     height: 100%;
     background-color: #eb3636;
-    grid-column: 1 / 3;
     grid-row: 1 / 2;
     filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 25%));
   }
@@ -70,7 +76,7 @@
   }
 </style>
 
-<div class="top-bar-wrapper">
+<div style={`grid-column: 1 / ${gridColEnd}`} class="top-bar-wrapper">
   <div class="logo">Watch Party</div>
   <TopBarSearch />
   <TopBarNavigation />
