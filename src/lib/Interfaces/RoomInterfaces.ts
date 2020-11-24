@@ -1,6 +1,6 @@
-export interface RoomListing {
+export interface RoomHTMLElementData {
     thumbnail: string;
     title: string;
     topic: string;
-    viewCount: number;
+    watchCount: number;
   }

@@ -7,7 +7,6 @@
 <style>
   .parties-page {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 8vh 8vh 8vh 76vh;
 
     width: 100%;
@@ -17,7 +16,7 @@
 </style>
 
 <div class="parties-page">
-  <TopBar gridColEnd={6} />
+  <TopBar gridColEnd={2} />
   <PageController />
   <QuerySection />
 </div>
