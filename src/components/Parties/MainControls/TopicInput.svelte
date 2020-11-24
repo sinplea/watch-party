@@ -11,7 +11,7 @@
 
 <style>
   input {
-    grid-column: 6 / 7;
+    grid-column: 4 / 5;
 
     margin: 0;
 

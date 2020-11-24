@@ -9,14 +9,27 @@
 
 <style>
   .create-button {
-    grid-column: 4 / 5;
+    display: grid;
+    align-items: center;
 
-    padding: 15% 20%;
+    grid-column: 6 / 7;
+
+    height: 65%;
+    width: 100%;
     border-radius: 5px;
 
     background-color: crimson;
     color: white;
+    font-family: "Mukta", sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  .text {
+    text-align: center;
   }
 </style>
 
-<div on:click={handleCreate} class="create-button">Create</div>
+<div on:click={handleCreate} class="create-button">
+  <div class="text">Create</div>
+</div>

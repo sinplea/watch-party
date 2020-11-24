@@ -7,7 +7,7 @@
 
   let topicQuery: string;
   let roomQuery: string;
-  let isPublic: boolean;
+  let visibility: string;
 
   function updateRoomQuery(e: CustomEvent): void {
     roomQuery = e.detail.room;
@@ -18,7 +18,7 @@
   }
 
   function updateVisibility(e: CustomEvent): void {
-    isPublic = e.detail.isPublic;
+    visibility = e.detail.visibility;
   }
 
   // TODO:
@@ -31,16 +31,27 @@
 <style>
   .page-controller {
     display: grid;
+
     align-items: center;
     justify-items: center;
-    grid-template-columns: 1fr 3fr 0.5fr 0.5fr 0.5fr 2fr;
+    grid-template-columns: auto 2.5fr 0.4fr 2fr 0.4fr 0.4fr;
     grid-template-rows: 100%;
+
     grid-row: 2 / 3;
-    margin: 0 4%;
+
+    /** 18px on 1920 display*/
+    column-gap: 1.125em;
+
+    /** 40px margin left & right on 1920 display*/
+    margin: 0 2.08%;
   }
 
   .page-title {
     grid-column: 1 / 2;
+
+    font-family: "Mukta", sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
   }
 </style>
 
@@ -48,7 +59,7 @@
   <div class="page-title">Parties</div>
   <JoinInput on:joinInputUpdated={updateRoomQuery} />
   <JoinButton on:joinButtonPressed={join} />
-  <CreateButton on:createButtonPushed={create} />
-  <VisibilityToggle on:visibilityToggled={updateVisibility} />
   <TopicInput on:topicInputUpdated={updateTopicQuery} />
+  <VisibilityToggle on:visibilityToggled={updateVisibility} />
+  <CreateButton on:createButtonPushed={create} />
 </div>

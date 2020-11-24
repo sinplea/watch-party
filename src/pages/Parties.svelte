@@ -7,7 +7,10 @@
 <style>
   .parties-page {
     display: grid;
-    grid-template-rows: 8vh 8vh 8vh 76vh;
+
+    /** NOTE: Not sure if this line does what I think it does yet. */
+    grid-template-rows: 8vh 8vh 8vh minmax(76vh, auto);
+    grid-auto-columns: auto;
 
     width: 100%;
     background-color: white;
@@ -16,7 +19,7 @@
 </style>
 
 <div class="parties-page">
-  <TopBar gridColEnd={2} />
+  <TopBar />
   <PageController />
   <QuerySection />
 </div>
