@@ -1,9 +1,9 @@
 <script lang="ts">
-  import JoinInput from "./JoinInput.svelte";
-  import JoinButton from "./JoinButton.svelte";
-  import VisibilityToggle from "./VisibilityToggle.svelte";
-  import TopicInput from "./TopicInput.svelte";
-  import CreateButton from "./CreateButton.svelte";
+  import JoinInput from "./MainControls/JoinInput.svelte";
+  import JoinButton from "./MainControls/JoinButton.svelte";
+  import VisibilityToggle from "./MainControls/VisibilityToggle.svelte";
+  import TopicInput from "./MainControls/TopicInput.svelte";
+  import CreateButton from "./MainControls/CreateButton.svelte";
 
   let topicQuery: string;
   let roomQuery: string;
