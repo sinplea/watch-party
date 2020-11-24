@@ -11,7 +11,7 @@
 
   let query: string;
   let filter: string;
-  let response: Array<RoomHTMLElementData> = [mockData];
+  let response: Array<RoomHTMLElementData> = mockData;
 
   // TODO:
   function search(): Array<RoomHTMLElementData> {
