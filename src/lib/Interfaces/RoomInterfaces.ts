@@ -1,6 +1,6 @@
-import type { Sender } from './ChatInterfaces';
-
-export interface RoomInfo {
-    code: string,
-    users: Array<Sender>,
-};
+export interface RoomListing {
+    thumbnail: string;
+    title: string;
+    topic: string;
+    viewCount: number;
+  }
