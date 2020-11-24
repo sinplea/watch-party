@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { RoomListing } from "../../../lib/Interfaces/RoomInterfaces";
-  export let roomListing: RoomListing;
+  import type { RoomHTMLElementData } from "../../../lib/Interfaces/RoomInterfaces";
+  export let roomListing: RoomHTMLElementData;
 
   function join(): void {}
 </script>
@@ -12,7 +12,7 @@
   <div class="thumbnail-container">
     <div class="view-count">
       <span class="material-icons">account_circle</span>
-      <span>{roomListing.viewCount}</span>
+      <span>{roomListing.watchCount}</span>
     </div>
     <div class="thumbnail">
       <img src={roomListing.thumbnail} alt="Room thumbnail preview" />

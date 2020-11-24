@@ -1,9 +1,13 @@
 <script lang="ts">
+  import { createEventDispatcher } from "svelte";
+  const dispatch = createEventDispatcher();
+
   let filter: string = "Popular";
   let filterOptions: Array<string> = ["Popular", "Recent"];
 
   function handleClick(index: number): void {
     filter = filterOptions[index];
+    dispatch("filterUpdated", { filter });
   }
 </script>
 

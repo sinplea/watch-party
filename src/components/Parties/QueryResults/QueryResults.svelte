@@ -1,8 +1,8 @@
 <script lang="ts">
   import QueryResult from "./QueryResult.svelte";
-  import type { RoomListing } from "../../../lib/Interfaces/RoomInterfaces";
+  import type { RoomHTMLElementData } from "../../../lib/Interfaces/RoomInterfaces";
 
-  export let results: Array<RoomListing> = [];
+  export let results: Array<RoomHTMLElementData>;
 </script>
 
 {#each results as roomListing}
