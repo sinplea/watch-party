@@ -12,13 +12,30 @@
 </script>
 
 <style>
+  .dropdown {
+    grid-column: 2 / 3;
+    border-radius: 5px;
+  }
+
+  .uk-button {
+    text-transform: none;
+    color: crimson;
+    font-family: "Mukta", sans-serif;
+    font-weight: 300;
+    border-radius: 5px;
+  }
 </style>
 
-<div class="uk-inline">
+<div class="uk-inline dropdown">
   <button class="uk-button uk-button-default" type="button">{filter}</button>
   {#each filterOptions as f, i}
     {#if f !== filter}
-      <div on:click={() => handleClick(i)} uk-dropdown="mode: click">{f}</div>
+      <div
+        class="drop"
+        on:click={() => handleClick(i)}
+        uk-dropdown="mode: click">
+        {f}
+      </div>
     {/if}
   {/each}
 </div>

@@ -28,19 +28,29 @@
 </script>
 
 <style>
-  .query-section {
+  .query-section-top {
     grid-row: 3 / 4;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 0.1fr 0.075fr;
+
+    column-gap: 0.5em;
+    margin: 0 60% 0 2.08%;
+  }
+
+  .query-section-bottom {
+    grid-row: 4 / 5;
   }
 </style>
 
-<div class="query-section">
-  <div class="top">
-    <SearchInput on:searchInputUpdated={updateQuery} />
-    <SearchButton on:searchButtonClicked={search} />
-    <SearchDropdown on:filterUpdated={updateFilter} />
-  </div>
+<div class="query-section-top">
+  <SearchInput on:searchInputUpdated={updateQuery} />
+  <SearchDropdown on:filterUpdated={updateFilter} />
+  <SearchButton on:searchButtonClicked={search} />
+</div>
 
-  <div class="bottom">
-    <QueryResults results={response} />
-  </div>
+<div class="query-section-bottom">
+  <QueryResults results={response} />
 </div>
