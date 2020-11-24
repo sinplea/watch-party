@@ -10,6 +10,25 @@
 </script>
 
 <style>
+  input {
+    grid-column: 6 / 7;
+
+    margin: 0;
+
+    width: 100%;
+    height: 2em;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-family: "Mukta", sans-serif;
+    font-weight: lighter;
+    box-sizing: border-box;
+
+    padding-left: 1%;
+    border: 1px solid gray;
+    display: block;
+  }
 </style>
 
 <input

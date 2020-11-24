@@ -11,6 +11,9 @@
 </script>
 
 <style>
+  .visibility-toggle {
+    grid-column: 5 / 6;
+  }
   /* The switch - the box around the slider */
   .switch {
     position: relative;
@@ -81,4 +84,5 @@
     <input type="checkbox" />
     <span on:click={toggleVisibility} class="slider round" />
   </label>
+  <span>{isPublic ? 'Public' : 'Private'}</span>
 </div>

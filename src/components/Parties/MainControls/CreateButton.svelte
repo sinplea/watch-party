@@ -9,6 +9,13 @@
 
 <style>
   .create-button {
+    grid-column: 4 / 5;
+
+    padding: 15% 20%;
+    border-radius: 5px;
+
+    background-color: crimson;
+    color: white;
   }
 </style>
 

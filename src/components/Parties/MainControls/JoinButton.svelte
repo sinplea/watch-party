@@ -9,7 +9,14 @@
 
 <style>
   .join-button {
+    grid-column: 3 / 4;
+
+    padding: 15% 25%;
+    border-radius: 5px;
+
+    background-color: crimson;
+    color: white;
   }
 </style>
 
-<div on:click={handleJoin} class="create-button">Create</div>
+<div on:click={handleJoin} class="join-button">Join</div>
