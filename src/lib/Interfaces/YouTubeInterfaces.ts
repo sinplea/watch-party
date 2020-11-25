@@ -3,17 +3,6 @@
 // https://developers.google.com/youtube/v3/docs/search/list
 // https://developers.google.com/youtube/v3/docs/videos/list
 
-export interface YouTubeSearchResponse {
-    kind: string,
-    etag: string,
-    nextPageToken: string,
-    regionCode: string,
-    pageInfo: {
-        totalResults: number,
-        resultsPerPage: number,
-    },
-    items: [YouTubeSearchResponseItem],
-};
 
 export interface YouTubeSearchResponseItem {
     kind: string,
@@ -51,16 +40,6 @@ export interface YouTubeSearchResponseItem {
     }
 };
 
-export interface YoutubeVideoStatisticsResponse {
-    kind: string,
-    etag: string,
-    items: [YoutubeVideoStatisticsResponseItem],
-    pageInfo: {
-        totalResults: number,
-        resultsPerPage: number,
-    },
-};
-
 export interface YoutubeVideoStatisticsResponseItem {
     kind: string,
     etag: string,
@@ -71,5 +50,27 @@ export interface YoutubeVideoStatisticsResponseItem {
         dislikeCount: string,
         favoriteCount: string,
         commentCount: string,
+    },
+};
+
+export interface YouTubeSearchResponse {
+    kind: string,
+    etag: string,
+    nextPageToken: string,
+    regionCode: string,
+    pageInfo: {
+        totalResults: number,
+        resultsPerPage: number,
+    },
+    items: [YouTubeSearchResponseItem],
+};
+
+export interface YoutubeVideoStatisticsResponse {
+    kind: string,
+    etag: string,
+    items: [YoutubeVideoStatisticsResponseItem],
+    pageInfo: {
+        totalResults: number,
+        resultsPerPage: number,
     },
 };

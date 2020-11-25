@@ -55,13 +55,24 @@
   <meta name="author" content="Alex Werner @sinplea" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/css/uikit.min.css" />
+
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit.min.js">
+  </script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/uikit@3.5.9/dist/js/uikit-icons.min.js">
+  </script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet" />
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
     rel="stylesheet" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Mukta&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <!-- Exposes gapi variable globally -->
   <script src="https://apis.google.com/js/api.js" on:load={handleGoogleAPI}>

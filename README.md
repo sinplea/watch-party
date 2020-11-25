@@ -32,9 +32,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-| ![Screenshot](screenshots/screenshot.png) |
+| ![Screenshot](screenshots/parties_page.png) |
 |:--:| 
-| *A recent screenshot of the site* |
+| *A recent screenshot of the site (with mock data)* |
 
 Watch Party is a web design project that will let people watch YouTube and interact together. 
 
@@ -47,7 +47,7 @@ Watch Party is a web design project that will let people watch YouTube and inter
 * [Svelte](https://github.com/sveltejs/svelte) | Front-end Framework
 * [Typescript](https://github.com/microsoft/TypeScript) | Type Checking & Scale
 * [Jest](https://github.com/facebook/jest) & [testing-library](https://github.com/testing-library) | Unit & Integration Testing
-* [Socket.IO](https://github.com/socketio/socket.io) | Real Time Data Transfer Between Clients
+* [Websockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) | Real Time Data Transfer Between Clients
 
 #### Backend
 
