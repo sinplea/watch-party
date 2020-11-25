@@ -11,14 +11,22 @@
 <style>
   .search-button {
     grid-column: 3 / 4;
+    display: grid;
+    align-items: center;
 
     box-sizing: border-box;
-    width: 100%;
+    width: 80%;
 
     border-radius: 5px;
-    border: 0.5px solid black;
+
+    border: 0.5px solid gray;
     text-align: center;
+    background-color: white;
+    color: crimson;
+    height: 2em;
   }
 </style>
 
-<div on:click={handleClick} class="search-button material-icons">search</div>
+<div on:click={handleClick} class="search-button ">
+  <div class="text material-icons">search</div>
+</div>

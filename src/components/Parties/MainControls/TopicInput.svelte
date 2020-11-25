@@ -12,7 +12,6 @@
 <style>
   input {
     grid-column: 4 / 5;
-
     margin: 0;
 
     width: 100%;
@@ -28,6 +27,10 @@
     padding-left: 1%;
     border: 1px solid gray;
     display: block;
+  }
+
+  ::placeholder {
+    color: #aaa;
   }
 </style>
 

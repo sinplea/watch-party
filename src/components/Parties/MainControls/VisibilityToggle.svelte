@@ -26,7 +26,7 @@
     grid-column: 5 / 6;
     box-sizing: border-box;
     width: 100%;
-    height: 65%;
+    height: 55%;
 
     border-radius: 10px;
     background-color: white;
@@ -36,6 +36,8 @@
     font-family: "Mukta", sans-serif;
     font-size: 1.2em;
     font-weight: 300;
+
+    cursor: pointer;
   }
 
   .text {

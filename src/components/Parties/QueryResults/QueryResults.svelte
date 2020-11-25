@@ -9,8 +9,8 @@
   .query-results {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    column-gap: 20px;
-    margin: 0 40px;
+    column-gap: 1.25em;
+    margin: 0 2.5em;
   }
 </style>
 

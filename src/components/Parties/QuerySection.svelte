@@ -7,10 +7,10 @@
   import { fill } from "lodash";
   import type { RoomHTMLElementData } from "../../lib/Interfaces/RoomInterfaces";
 
-  const mockData = fill(Array(10), MockData);
+  const mockData = fill(Array(100), MockData);
 
-  let query: string;
-  let filter: string;
+  let query: string = "";
+  let filter: string = "Popular";
   let response: Array<RoomHTMLElementData> = mockData;
 
   // TODO:
@@ -23,6 +23,7 @@
   }
 
   function updateFilter(e: CustomEvent): void {
+    console.log(e.detail.filter);
     filter = e.detail.filter;
   }
 </script>
@@ -34,7 +35,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 1fr 0.1fr 0.075fr;
+    grid-template-columns: 10fr 2fr 1fr;
 
     column-gap: 0.5em;
     margin: 0 60% 0 2.08%;
@@ -46,8 +47,8 @@
 </style>
 
 <div class="query-section-top">
-  <SearchInput on:searchInputUpdated={updateQuery} />
-  <SearchDropdown on:filterUpdated={updateFilter} />
+  <SearchInput {query} on:searchInputUpdated={updateQuery} />
+  <SearchDropdown {filter} on:filterUpdated={updateFilter} />
   <SearchButton on:searchButtonClicked={search} />
 </div>
 

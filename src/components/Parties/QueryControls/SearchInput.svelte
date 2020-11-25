@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
-  let query: string;
+  export let query: string;
 
   function handleInput(e: Event): void {
     dispatch("searchInputUpdated", { query });
@@ -27,6 +27,9 @@
     padding-left: 1%;
     border: 1px solid gray;
     display: block;
+  }
+  ::placeholder {
+    color: #aaa;
   }
 </style>
 

@@ -27,6 +27,10 @@
     border: 1px solid gray;
     display: block;
   }
+
+  ::placeholder {
+    color: #aaa;
+  }
 </style>
 
 <input

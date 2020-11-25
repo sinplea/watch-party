@@ -2,40 +2,39 @@
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
-  let filter: string = "Popular";
-  let filterOptions: Array<string> = ["Popular", "Recent"];
+  export let filter: string;
+  let filterOptions: Array<string> = ["Popular", "Recent", "test", "foo"];
 
-  function handleClick(index: number): void {
-    filter = filterOptions[index];
-    dispatch("filterUpdated", { filter });
+  $: {
+    if (filter) {
+      dispatch("filterUpdated", { filter });
+    }
   }
 </script>
 
 <style>
-  .dropdown {
-    grid-column: 2 / 3;
+  select {
     border-radius: 5px;
-  }
+    /** Doesn't work in Safari. */
+    text-align: center;
+    text-align-last: center;
+    -moz-text-align-last: center;
 
-  .uk-button {
-    text-transform: none;
-    color: crimson;
+    height: 2em;
+    width: 100%;
+    box-sizing: border-box;
+
+    text-align: center;
+    background-color: white;
     font-family: "Mukta", sans-serif;
+    font-size: 1em;
     font-weight: 300;
-    border-radius: 5px;
+    color: crimson;
   }
 </style>
 
-<div class="uk-inline dropdown">
-  <button class="uk-button uk-button-default" type="button">{filter}</button>
-  {#each filterOptions as f, i}
-    {#if f !== filter}
-      <div
-        class="drop"
-        on:click={() => handleClick(i)}
-        uk-dropdown="mode: click">
-        {f}
-      </div>
-    {/if}
+<select bind:value={filter}>
+  {#each filterOptions as f}
+    <option value={f}>{f}</option>
   {/each}
-</div>
+</select>

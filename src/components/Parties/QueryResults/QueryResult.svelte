@@ -6,6 +6,12 @@
 </script>
 
 <style>
+  /**
+  TODO: Better account for image resizing. Hard to tell how YouTube Thumbnails
+  will need to be processed with my tired brain, so I'm leaving this as is for now.
+  It's a problem I will need to think about for a bit of time. (Outside the scope of
+  this design PR)
+  */
   .thumbnail-container {
     position: relative;
     height: 196.88px;
@@ -17,7 +23,7 @@
     align-items: center;
     justify-items: center;
     padding: 1%;
-    border-radius: 1px;
+    border-radius: 2px;
     grid-template-columns: 1fr 2fr;
 
     position: absolute;
@@ -33,13 +39,13 @@
 
   .view-count-icon {
     grid-column: 1 / 2;
-    font-size: 16px;
+    font-size: 1em;
   }
 
   .view-count-number {
     grid-column: 2 / 3;
 
-    font-size: 12px;
+    font-size: 0.75em;
     font-weight: 300;
   }
 

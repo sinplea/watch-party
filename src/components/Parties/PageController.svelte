@@ -43,7 +43,8 @@
     column-gap: 1.125em;
 
     /** 40px margin left & right on 1920 display*/
-    margin: 0 2.08%;
+    padding: 0 2.08%;
+    background-color: white;
   }
 
   .page-title {
